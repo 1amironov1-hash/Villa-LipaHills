@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>villalipahills</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Villa LipaHills</h1>
+</header>
+
+<!-- Главная картинка -->
+<section class="main-image">
+  <img src="дом.pg.jpg" alt="Главная фотография дома">
+</section>
+
+<!-- Описание -->
+<section class="description">
+  <p>Добро пожаловать в Villa LipaHills — уютный дом для отдыха. Просторная вилла с прекрасным видом, бассейном и всеми удобствами для комфортного проживания.</p>
+</section>
+
+<!-- Галерея -->
+<section class="slideshow-container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 2</div>
+    <img src="дом1.jpeg" alt="Картинка 1">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 2</div>
+    <img src="дом2.jpeg" alt="Картинка 2">
+  </div>
+
+  <!-- Кнопки -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</section>
+
+<footer>
+  <p>© 2025 Villa LipaHills. Все права защищены.</p>
+</footer>
+
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function showSlides(n) {
+    const slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "block";
+  }
+</script>
+
+</body>
+</html>
