@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Villa LipaHills</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Заголовок -->
+  <header>
+    <h1>Villa LipaHills</h1>
+  </header>
+
+  <!-- Главная картинка -->
+  <div class="main-image">
+    <img src="дом.pg.jpg" alt="Главная картинка">
+  </div>
+
+  <!-- Описание -->
+  <div class="description">
+    <p>Добро пожаловать в Villa LipaHills — уютное место для отдыха в окружении природы. 
+    Просторные комнаты, потрясающий вид и всё, что нужно для комфортного проживания.</p>
+  </div>
+
+  <!-- Галерея -->
+  <div class="slideshow-container">
+    <div class="mySlides">
+      <img src="дом1.jpeg" alt="Картинка 1" onclick="openFull(this)">
+    </div>
+    <div class="mySlides">
+      <img src="дом2.jpeg" alt="Картинка 2" onclick="openFull(this)">
+    </div>
+
+    <!-- Стрелки -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+
+  <!-- Полноэкранный просмотр -->
+  <div id="lightbox" class="lightbox" onclick="closeFull()">
+    <img id="lightbox-img">
+  </div>
+
+  <!-- Подвал -->
+  <footer>
+    <p>© 2025 Villa LipaHills. Все права защищены.</p>
+  </footer>
+
+  <!-- Скрипты -->
+  <script>
+    // --- Галерея со стрелками ---
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+      const slides = document.getElementsByClassName("mySlides");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex - 1].style.display = "block";
+    }
+
+    // --- Полноэкранное фото ---
+    function openFull(img) {
+      document.getElementById("lightbox").style.display = "flex";
+      document.getElementById("lightbox-img").src = img.src;
+    }
+
+    function closeFull() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+
+    // --- Листание стрелками в полноэкранном режиме ---
+    document.addEventListener("keydown", function(e) {
+      const lightbox = document.getElementById("lightbox");
+      if (lightbox.style.display === "flex") {
+        if (e.key === "ArrowLeft") plusSlides(-1);
+        if (e.key === "ArrowRight") plusSlides(1);
+      }
+    });
+  </script>
+</body>
+</html>
