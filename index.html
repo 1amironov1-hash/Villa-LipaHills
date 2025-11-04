@@ -1,55 +1,60 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Villa LipaHills</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Заголовок -->
+
+  <!-- Навигация -->
   <header>
-    <h1>Villa LipaHills</h1>
+    <nav class="navbar">
+      <div class="logo">Villa LipaHills</div>
+      <div class="nav-links">
+        <a href="#">Главная</a>
+        <a href="#">О вилле</a>
+        <a href="#">Галерея</a>
+        <a href="#">Расположение</a>
+        <a href="#">Контакты</a>
+      </div>
+    </nav>
   </header>
 
   <!-- Главная картинка -->
-  <div class="main-image">
-    <img src="house.pg.jpg" alt="Главная картинка">
-  </div>
+  <section class="main-image">
+    <img src="house.pg.jpg" alt="Главная фотография виллы">
+  </section>
 
   <!-- Описание -->
-  <div class="description">
-    <p>Добро пожаловать в Villa LipaHills уютное место для отдыха в окружении природы. 
-    Просторные комнаты, потрясающий вид все, что нужно для комфортного проживания. Ждем вас.</p>
-  </div>
+  <section class="description">
+    <p>Добро пожаловать в Villa LipaHills — место, где сочетаются уют, стиль и великолепный вид на сербские холмы.</p>
+  </section>
 
   <!-- Галерея -->
-  <div class="slideshow-container">
+  <section class="slideshow-container">
     <div class="mySlides">
-      <img src="house1.jpeg" alt="Картинка 1" onclick="openFull(this)">
+      <div class="numbertext">1 / 2</div>
+      <img src="house1.jpeg" alt="Картинка 1">
+      <div class="caption">Бассейн</div>
     </div>
+
     <div class="mySlides">
-      <img src="house2.jpeg" alt="Картинка 2" onclick="openFull(this)">
+      <div class="numbertext">2 / 2</div>
+      <img src="house2.jpeg" alt="Картинка 2">
+      <div class="caption">Сауна</div>
     </div>
 
-    <!-- Стрелки -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  </div>
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+  </section>
 
-  <!-- Полноэкранный просмотр -->
-  <div id="lightbox" class="lightbox" onclick="closeFull()">
-    <img id="lightbox-img">
-  </div>
-
-  <!-- Подвал -->
   <footer>
-    <p>© 2025 Villa LipaHills. Все права защищены.</p>
+    <p>© 2025 Villa LipaHills</p>
   </footer>
 
-  <!-- Скрипты -->
   <script>
-    // --- Галерея со стрелками ---
     let slideIndex = 1;
     showSlides(slideIndex);
 
@@ -58,7 +63,7 @@
     }
 
     function showSlides(n) {
-      const slides = document.getElementsByClassName("mySlides");
+      let slides = document.getElementsByClassName("mySlides");
       if (n > slides.length) { slideIndex = 1 }
       if (n < 1) { slideIndex = slides.length }
       for (let i = 0; i < slides.length; i++) {
@@ -66,25 +71,7 @@
       }
       slides[slideIndex - 1].style.display = "block";
     }
-
-    // --- Полноэкранное фото ---
-    function openFull(img) {
-      document.getElementById("lightbox").style.display = "flex";
-      document.getElementById("lightbox-img").src = img.src;
-    }
-
-    function closeFull() {
-      document.getElementById("lightbox").style.display = "none";
-    }
-
-    // --- Листание стрелками в полноэкранном режиме ---
-    document.addEventListener("keydown", function(e) {
-      const lightbox = document.getElementById("lightbox");
-      if (lightbox.style.display === "flex") {
-        if (e.key === "ArrowLeft") plusSlides(-1);
-        if (e.key === "ArrowRight") plusSlides(1);
-      }
-    });
   </script>
+
 </body>
 </html>
