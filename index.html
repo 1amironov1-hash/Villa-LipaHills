@@ -1,60 +1,120 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Villa LipaHills</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Навигация -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">Villa LipaHills</div>
-      <div class="nav-links">
-        <a href="#">Главная</a>
-        <a href="#">О вилле</a>
-        <a href="#">Галерея</a>
-        <a href="#">Расположение</a>
-        <a href="#">Контакты</a>
-      </div>
-    </nav>
+  <!-- 🔹 Верхняя панель -->
+  <header class="top-bar">
+    <div class="left-info">
+      <span>📞 +381 60 123 4567</span>
+      <span class="langs">EN | SR</span>
+    </div>
+    <div class="center-logo">
+      <h1>Villa LipaHills</h1>
+    </div>
+    <div class="right-menu">
+      <a href="#home">Главная</a>
+      <a href="#about">О вилле</a>
+      <a href="#houses">Дома</a>
+      <a href="#gallery">Галерея</a>
+      <a href="#contacts">Контакты</a>
+    </div>
   </header>
 
-  <!-- Главная картинка -->
-  <section class="main-image">
-    <img src="house.pg.jpg" alt="Главная фотография виллы">
+  <!-- 🔹 Главная -->
+  <section id="home" class="hero">
+    <img src="дом.jpg" alt="Главная фотография виллы" class="hero-image">
+    <div class="hero-text">
+      <h2>Villa LipaHills</h2>
+      <p>Уют, стиль и вид на сербские холмы</p>
+    </div>
   </section>
 
-  <!-- Описание -->
-  <section class="description">
-    <p>Добро пожаловать в Villa LipaHills — место, где сочетаются уют, стиль и великолепный вид на сербские холмы.</p>
+  <!-- 🔹 О вилле -->
+  <section id="about" class="about-section">
+    <div class="about-left">
+      <img src="дом1.jpeg" alt="Фото виллы">
+    </div>
+    <div class="about-right">
+      <h2>О вилле</h2>
+      <p>Villa LipaHills — это современная вилла, расположенная в живописных холмах Сербии. Здесь вы найдете уют, тишину и атмосферу полного отдыха. Просторные комнаты, бассейн, сауна и невероятный вид на горы делают это место идеальным для вашего отпуска.</p>
+    </div>
   </section>
 
-  <!-- Галерея -->
-  <section class="slideshow-container">
-    <div class="mySlides">
-      <div class="numbertext">1 / 2</div>
-      <img src="house1.jpeg" alt="Картинка 1">
-      <div class="caption">Бассейн</div>
+  <!-- 🔹 Раздел домов -->
+  <section id="houses" class="houses">
+    <h2>Наши дома</h2>
+
+    <!-- Первый дом -->
+    <div class="house">
+      <h3>Villa Lipa 1</h3>
+      <p class="house-desc">Современный дом с бассейном и панорамным видом на холмы.</p>
+      <div class="house-gallery">
+        <img src="дом1.jpeg" alt="Дом 1 - фото 1">
+        <img src="дом2.jpeg" alt="Дом 1 - фото 2">
+      </div>
+      <button class="details-btn">Подробнее</button>
     </div>
 
-    <div class="mySlides">
-      <div class="numbertext">2 / 2</div>
-      <img src="house2.jpeg" alt="Картинка 2">
-      <div class="caption">Сауна</div>
+    <!-- Второй дом -->
+    <div class="house">
+      <h3>Villa Lipa 2</h3>
+      <p class="house-desc">Уютный дом с сауной и террасой для отдыха на свежем воздухе.</p>
+      <div class="house-gallery">
+        <img src="дом2.jpeg" alt="Дом 2 - фото 1">
+        <img src="дом1.jpeg" alt="Дом 2 - фото 2">
+      </div>
+      <button class="details-btn">Подробнее</button>
     </div>
-
-    <a class="prev" onclick="plusSlides(-1)">❮</a>
-    <a class="next" onclick="plusSlides(1)">❯</a>
   </section>
 
-  <footer>
-    <p>© 2025 Villa LipaHills</p>
+  <!-- 🔹 Галерея -->
+  <section id="gallery" class="gallery">
+    <h2>Галерея</h2>
+    <div class="slideshow-container">
+      <div class="mySlides">
+        <div class="numbertext">1 / 2</div>
+        <img src="дом1.jpeg" alt="Бассейн">
+        <div class="caption">Бассейн</div>
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">2 / 2</div>
+        <img src="дом2.jpeg" alt="Сауна">
+        <div class="caption">Сауна</div>
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
+  </section>
+
+  <!-- 🔹 Контакты и футер -->
+  <footer id="contacts">
+    <div class="footer-left">
+      <h3>Villa LipaHills</h3>
+      <p>📧 info@lipahills.com</p>
+      <p>📞 +381 60 123 4567</p>
+      <p>📍 Сербия, Zlatibor</p>
+      <div class="socials">
+        <a href="#">Instagram</a> | <a href="#">Facebook</a>
+      </div>
+    </div>
+
+    <div class="footer-right">
+      <button onclick="scrollToTop()" class="top-btn">⬆ Наверх</button>
+      <button class="details-btn">Подробнее о Villa 1</button>
+      <button class="details-btn">Подробнее о Villa 2</button>
+    </div>
   </footer>
 
   <script>
+    // Галерея
     let slideIndex = 1;
     showSlides(slideIndex);
 
@@ -70,6 +130,11 @@
         slides[i].style.display = "none";
       }
       slides[slideIndex - 1].style.display = "block";
+    }
+
+    // Кнопка "Наверх"
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
 
