@@ -1,246 +1,58 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Villa LipaHills — аренда вилл</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Villa Lipa Hills</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- TOP BAR (только на главной) -->
-  <header class="topbar">
-    <div class="topbar-left">
-      <a class="phone" href="tel:+381601234567">📞 +381 60 123 4567</a>
-      <div class="langs">EN | SR</div>
+  <!-- Навигация -->
+  <header class="navbar">
+    <div class="nav-left">
+      <span>EN</span>
+      <span>BO</span>
+      <span>+387 (0) 57 32 14 55</span>
     </div>
-
-    <div class="topbar-center">
-      <div class="logo">Villa LipaHills</div>
+    <div class="nav-center">
+      <img src="logo.png" alt="Logo" class="logo">
     </div>
-
-    <nav class="topbar-right">
-      <a href="#home">Главная</a>
-      <a href="#about">О вилле</a>
-      <a href="#houses">Дома</a>
-      <a href="#gallery">Галерея</a>
-      <a href="#location">Расположение</a>
-      <a href="#contacts">Контакты</a>
-    </nav>
+    <div class="nav-right">
+      <div class="menu-icon" id="menuToggle">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
   </header>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <!-- если хочешь видео — замени img на <video> и укажи источник -->
-    <img src="main.jpg" alt="Villa LipaHills" class="hero-bg">
-    <div class="hero-content">
-      <h1>Villa LipaHills</h1>
-      <div class="hero-actions">
-        <a class="btn primary" href="#houses">Наши дома</a>
-        <a class="btn outline" href="#contacts">Связаться</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="section about">
-    <div class="container about-inner">
-      <div class="about-left">
-        <img src="about.jpg" alt="О вилле">
-      </div>
-      <div class="about-right">
-        <h2>О вилле</h2>
-        <p>Villa LipaHills — уютная вилла в живописном месте: просторные комнаты, бассейн, сауна и терраса с панорамным видом. Подходит для семейного отдыха и компаний.</p>
-        <ul class="features">
-          <li>2 спальни + гостиная</li>
-          <li>Закрытый бассейн</li>
-          <li>Кухня полностью укомплектована</li>
-          <li>Wi-Fi, парковка, BBQ</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOUSES (две карточки) -->
-  <section id="houses" class="section houses">
-    <div class="container">
-      <h2>Наши дома</h2>
-
-      <div class="houses-grid">
-        <!-- HOUSE 1 -->
-        <article class="house-card">
-          <div class="house-card-header">
-            <h3>Villa Lipa #1</h3>
-            <p class="house-sub">Современная вилла с бассейном</p>
-          </div>
-          <div class="house-media">
-            <img src="house1a.jpg" alt="Villa Lipa 1 - 1">
-            <img src="house1b.jpg" alt="Villa Lipa 1 - 2">
-          </div>
-          <div class="house-actions">
-            <a class="btn primary" href="#contacts">Узнать подробней</a>
-          </div>
-        </article>
-
-        <!-- HOUSE 2 -->
-        <article class="house-card">
-          <div class="house-card-header">
-            <h3>Villa Lipa #2</h3>
-            <p class="house-sub">Комфортная вилла с сауной</p>
-          </div>
-          <div class="house-media">
-            <img src="house2a.jpg" alt="Villa Lipa 2 - 1">
-            <img src="house2b.jpg" alt="Villa Lipa 2 - 2">
-          </div>
-          <div class="house-actions">
-            <a class="btn primary" href="#contacts">Узнать подробней</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY (слайдер + подписи) -->
-  <section id="gallery" class="section gallery">
-    <div class="container">
-      <h2>Галерея</h2>
-
-      <div class="slideshow" aria-hidden="false">
-        <button class="slide-btn prev" aria-label="Prev">❮</button>
-
-        <div class="slides-wrapper">
-          <div class="slide" data-caption="Бассейн">
-            <img src="house1a.jpg" alt="Бассейн">
-          </div>
-          <div class="slide" data-caption="Сауна">
-            <img src="house1b.jpg" alt="Сауна">
-          </div>
-          <div class="slide" data-caption="Терраса">
-            <img src="house2a.jpg" alt="Терраса">
-          </div>
-          <div class="slide" data-caption="Интерьер">
-            <img src="house2b.jpg" alt="Интерьер">
-          </div>
-        </div>
-
-        <button class="slide-btn next" aria-label="Next">❯</button>
-
-        <div class="slide-caption" id="slide-caption">Бассейн</div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- LOCATION (карта) -->
-  <section id="location" class="section location">
-    <div class="container">
-      <h2>Расположение</h2>
-      <div class="map-box">
-        <!-- вставь сюда iframe своего Google Maps -->
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!..." 
-          style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
-      <p class="location-info">Адрес: Zlatibor, Serbia — ~10 минут от центра.</p>
-    </div>
-  </section>
-
-  <!-- CONTACTS / FOOTER -->
-  <footer id="contacts" class="footer">
-    <div class="container footer-grid">
-      <div class="footer-left">
-        <div class="brand">
-          <div class="brand-icon">🏡</div>
-          <div>
-            <h3>Villa LipaHills</h3>
-            <p>info@lipahills.com<br>+381 60 123 4567</p>
-            <p>Сербия, Zlatibor</p>
-          </div>
-        </div>
-        <div class="socials">
-          <a href="#">Instagram</a> · <a href="#">Facebook</a>
-        </div>
-      </div>
-
-      <div class="footer-right">
-        <p>Нужна помощь? Свяжитесь с нами:</p>
-        <a class="btn primary" href="https://wa.me/381601234567" target="_blank" rel="noreferrer">Написать в WhatsApp</a>
-        <div class="footer-links">
-          <button class="btn outline" onclick="scrollToTop()">Наверх</button>
-          <a class="btn outline" href="#houses">Villa 1 — подробнее</a>
-          <a class="btn outline" href="#houses">Villa 2 — подробнее</a>
-        </div>
-      </div>
-    </div>
-    <div class="copyright">© 2025 Villa LipaHills</div>
-  </footer>
-
-  <!-- LIGHTBOX (для полноэкранного просмотра) -->
-  <div id="lightbox" class="lightbox" aria-hidden="true" onclick="closeLightbox()">
-    <img id="lightbox-img" src="" alt="">
+  <!-- Меню, которое открывается -->
+  <div class="overlay-menu" id="overlayMenu">
+    <ul>
+      <li>HOME</li>
+      <li>ABOUT US</li>
+      <li>VILLA VRANAC</li>
+      <li>VILLA JOVANČIĆ</li>
+      <li>CONTACT</li>
+    </ul>
   </div>
 
-<script>
-/* ====== SLIDESHOW (простая реализация) ====== */
-(function() {
-  const slidesWrapper = document.querySelector('.slides-wrapper');
-  const slides = Array.from(document.querySelectorAll('.slide'));
-  const prevBtn = document.querySelector('.slide-btn.prev');
-  const nextBtn = document.querySelector('.slide-btn.next');
-  const captionEl = document.getElementById('slide-caption');
-  let index = 0;
+  <!-- Главный блок -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="small-text">TOPLIK RESORTS</p>
+      <h1>IN HARMONY<br>WITH NATURE</h1>
+    </div>
+  </section>
 
-  function show(i) {
-    if (i < 0) i = slides.length - 1;
-    if (i >= slides.length) i = 0;
-    index = i;
-    const offset = -i * 100;
-    slidesWrapper.style.transform = 'translateX(' + offset + '%)';
-    const cap = slides[i].dataset.caption || '';
-    captionEl.textContent = cap;
-  }
+  <script>
+    // Открытие и закрытие меню
+    const menuToggle = document.getElementById("menuToggle");
+    const overlayMenu = document.getElementById("overlayMenu");
 
-  prevBtn.addEventListener('click', () => show(index - 1));
-  nextBtn.addEventListener('click', () => show(index + 1));
-
-  // Click to open lightbox
-  slides.forEach(s => {
-    s.addEventListener('click', () => {
-      const img = s.querySelector('img');
-      openLightbox(img.src, img.alt);
+    menuToggle.addEventListener("click", () => {
+      overlayMenu.classList.toggle("active");
     });
-  });
-
-  // init
-  show(0);
-})();
-
-/* ====== LIGHTBOX ====== */
-function openLightbox(src, alt) {
-  const lb = document.getElementById('lightbox');
-  const img = document.getElementById('lightbox-img');
-  img.src = src;
-  img.alt = alt || '';
-  lb.style.display = 'flex';
-  lb.setAttribute('aria-hidden', 'false');
-}
-
-function closeLightbox() {
-  const lb = document.getElementById('lightbox');
-  lb.style.display = 'none';
-  lb.setAttribute('aria-hidden', 'true');
-}
-
-/* ====== SCROLL TO TOP ====== */
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-/* ====== FORCE CACHE BUST (для теста) ====== */
-/* добавляет параметр версии к ресурсам — можно использовать при отладке:
-   window.location.search ? '' : window.location.replace(window.location.href + '?v=' + Date.now());
-   но лучше просто использовать Ctrl+F5 или ?v=123 при тестировании
-*/
-</script>
+  </script>
 </body>
 </html>
