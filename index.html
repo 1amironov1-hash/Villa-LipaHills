@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Villa LipaHills</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Навигация -->
+
+  <!-- ВЕРХНЯЯ ПАНЕЛЬ -->
   <header class="top-bar">
     <div class="left">
       <span>EN</span>
       <span>BO</span>
       <span>+387 (0) 57 32 14 55</span>
     </div>
+
     <div class="center">
-      <img src="logo.png" alt="Villa LipaHills" class="logo">
+      <img src="logo.png" alt="Logo" class="logo">
     </div>
+
     <div class="right">
       <div class="menu-icon" onclick="toggleMenu()">
         <div></div>
@@ -24,33 +27,30 @@
         <div></div>
       </div>
     </div>
+
+    <nav class="menu">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Gallery</a>
+      <a href="#">Location</a>
+      <a href="#">Contact</a>
+    </nav>
   </header>
 
-  <!-- Меню -->
-  <nav id="menu" class="menu">
-    <ul>
-      <li>HOME</li>
-      <li>ABOUT US</li>
-      <li>VILLAS</li>
-      <li>GALLERY</li>
-      <li>CONTACT</li>
-    </ul>
-  </nav>
-
-  <!-- Главная секция -->
+  <!-- ГЛАВНЫЙ БЛОК -->
   <section class="hero">
-    <img src="дом.jpg" alt="Villa LipaHills" class="background">
-    <div class="hero-text">
-      <p>VILLA LIPAHILLS</p>
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h3>VILLA LIPAHILLS</h3>
       <h1>IN HARMONY<br>WITH NATURE</h1>
     </div>
   </section>
 
   <script>
     function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("active");
+      document.querySelector('.menu').classList.toggle('active');
     }
   </script>
+
 </body>
 </html>
