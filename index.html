@@ -1,58 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Villa Lipa Hills</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Навигация -->
-  <header class="navbar">
-    <div class="nav-left">
+  <header class="header">
+    <div class="header-left">
       <span>EN</span>
       <span>BO</span>
       <span>+387 (0) 57 32 14 55</span>
     </div>
-    <div class="nav-center">
-      <img src="logo.png" alt="Logo" class="logo">
+    <div class="header-center">
+      <img src="logo.png" alt="Villa Lipa Hills" class="logo">
     </div>
-    <div class="nav-right">
-      <div class="menu-icon" id="menuToggle">
-        <div></div>
-        <div></div>
-        <div></div>
+    <div class="header-right">
+      <div class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
   </header>
 
-  <!-- Меню, которое открывается -->
-  <div class="overlay-menu" id="overlayMenu">
-    <ul>
-      <li>HOME</li>
-      <li>ABOUT US</li>
-      <li>VILLA VRANAC</li>
-      <li>VILLA JOVANČIĆ</li>
-      <li>CONTACT</li>
-    </ul>
-  </div>
-
-  <!-- Главный блок -->
   <section class="hero">
-    <div class="hero-content">
-      <p class="small-text">TOPLIK RESORTS</p>
+    <img src="main.jpg" alt="Villa Lipa Hills" class="hero-image">
+    <div class="hero-text">
+      <p class="subtitle">VILLA LIPA HILLS</p>
       <h1>IN HARMONY<br>WITH NATURE</h1>
     </div>
   </section>
-
-  <script>
-    // Открытие и закрытие меню
-    const menuToggle = document.getElementById("menuToggle");
-    const overlayMenu = document.getElementById("overlayMenu");
-
-    menuToggle.addEventListener("click", () => {
-      overlayMenu.classList.toggle("active");
-    });
-  </script>
 </body>
 </html>

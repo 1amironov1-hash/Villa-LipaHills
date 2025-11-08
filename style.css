@@ -2,106 +2,95 @@ body {
   margin: 0;
   font-family: "Georgia", serif;
   color: white;
-  overflow-x: hidden;
 }
 
-/* Навигация */
-.navbar {
+.header {
   position: absolute;
   top: 0;
-  left: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 60px;
-  background: transparent;
+  padding: 15px 40px;
   color: white;
   z-index: 10;
 }
 
-.nav-left span {
-  margin-right: 15px;
-  font-weight: bold;
+.header-left span {
+  margin-right: 20px;
   font-size: 14px;
+  font-weight: 500;
+}
+
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .logo {
-  height: 60px;
+  height: 50px;
 }
 
 .menu-icon {
-  width: 25px;
-  height: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 25px;
+  height: 18px;
   cursor: pointer;
 }
 
-.menu-icon div {
+.menu-icon span {
+  display: block;
   height: 3px;
   background: white;
   border-radius: 2px;
 }
 
-/* Меню */
-.overlay-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: #1b402e;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  transform: translateY(-100%);
-  transition: transform 0.5s ease;
-  z-index: 9;
-}
-
-.overlay-menu.active {
-  transform: translateY(0);
-}
-
-.overlay-menu ul {
-  list-style: none;
-  padding: 0;
-}
-
-.overlay-menu li {
-  margin: 20px 0;
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* Главный блок */
 .hero {
   position: relative;
   height: 100vh;
-  background: url("main-image.jpg") center center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(65%);
+}
+
+.hero-text {
+  position: absolute;
+  top: 45%;
+  left: 8%;
+  transform: translateY(-50%);
   text-align: left;
-  flex-direction: column;
-  padding-left: 100px;
 }
 
-.hero-content .small-text {
-  font-size: 18px;
-  letter-spacing: 2px;
-  color: #d1b38b;
-  margin-bottom: 10px;
+.subtitle {
+  font-size: 20px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.8);
 }
 
-.hero-content h1 {
-  font-size: 70px;
-  font-weight: 800;
+.hero-text h1 {
+  font-size: 80px;
   line-height: 1.1;
-  margin: 0;
+  font-weight: bold;
+  margin: 10px 0 0;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 40px;
+  }
+  .subtitle {
+    font-size: 14px;
+  }
+  .logo {
+    height: 35px;
+  }
 }
