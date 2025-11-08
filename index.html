@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Villa LipaHills</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -17,25 +17,35 @@
     </div>
 
     <div class="center">
-      <img src="logo.png" alt="Logo" class="logo">
+      <img src="logo.png" alt="Logo" class="logo" />
     </div>
 
     <div class="right">
-      <div class="menu-icon" onclick="toggleMenu()">
+      <!-- Три полоски -->
+      <div class="menu-icon" id="menuBtn" onclick="toggleMenu()">
         <div></div>
         <div></div>
         <div></div>
       </div>
-    </div>
 
-    <nav class="menu">
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Gallery</a>
-      <a href="#">Location</a>
-      <a href="#">Contact</a>
-    </nav>
+      <!-- Крестик -->
+      <div class="close-icon" id="closeBtn" onclick="toggleMenu()">
+        &times;
+      </div>
+    </div>
   </header>
+
+  <!-- МЕНЮ -->
+  <nav class="menu" id="menu">
+    <ul>
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">RESTAURANT</a></li>
+      <li><a href="#">ABOUT US</a></li>
+      <li><a href="#">VILLA VRANAC</a></li>
+      <li><a href="#">LUXURY VILLAS FOR RESTING</a></li>
+      <li><a href="#">VILLAGE MARKET</a></li>
+    </ul>
+  </nav>
 
   <!-- ГЛАВНЫЙ БЛОК -->
   <section class="hero">
@@ -48,9 +58,14 @@
 
   <script>
     function toggleMenu() {
-      document.querySelector('.menu').classList.toggle('active');
+      const menu = document.getElementById("menu");
+      const menuBtn = document.getElementById("menuBtn");
+      const closeBtn = document.getElementById("closeBtn");
+
+      menu.classList.toggle("active");
+      menuBtn.classList.toggle("hidden");
+      closeBtn.classList.toggle("visible");
     }
   </script>
-
 </body>
 </html>

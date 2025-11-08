@@ -13,7 +13,7 @@ body {
 
 /* ===== ВЕРХНЯЯ ПАНЕЛЬ ===== */
 .top-bar {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   display: grid;
@@ -21,31 +21,28 @@ body {
   align-items: center;
   padding: 20px 60px;
   color: white;
-  z-index: 200;
+  z-index: 1000; /* чтобы логотип, языки и крестик были поверх */
 }
 
-/* Левая часть */
 .left span {
   margin-right: 15px;
   font-size: 14px;
 }
 
-/* Центр: логотип */
 .center {
   display: flex;
   justify-content: center;
 }
 .logo {
   height: 70px;
-  transform: translateX(-10px); /* ← двигай, чтобы точно выровнять */
 }
 
-/* Правая часть: иконка меню */
+/* ===== ИКОНКА МЕНЮ ===== */
 .menu-icon {
   width: 35px;
   cursor: pointer;
   justify-self: end;
-  z-index: 300;
+  z-index: 1001;
 }
 .menu-icon div {
   width: 100%;
@@ -54,32 +51,63 @@ body {
   margin: 6px 0;
   transition: 0.3s;
 }
-
-/* Меню */
-.menu {
+.menu-icon.hidden {
   display: none;
-  position: absolute;
-  top: 80px;
-  right: 60px;
-  background: rgba(0, 0, 0, 0.9);
-  padding: 20px 40px;
-  border-radius: 10px;
-  flex-direction: column;
-  text-align: right;
 }
-.menu a {
+
+/* ===== КРЕСТИК ===== */
+.close-icon {
+  display: none;
+  font-size: 40px;
   color: white;
-  text-decoration: none;
-  margin: 10px 0;
-  font-size: 18px;
-  display: block;
+  cursor: pointer;
+  justify-self: end;
+  z-index: 1001;
   transition: 0.3s;
 }
-.menu a:hover {
-  color: #d4af37; /* золотистый */
-}
-.menu.active {
+.close-icon.visible {
   display: block;
+}
+
+/* ===== МЕНЮ ===== */
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1f3a24;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 500; /* ниже чем top-bar */
+  transition: opacity 0.4s ease;
+}
+
+.menu.active {
+  display: flex;
+}
+
+.menu ul {
+  list-style: none;
+  text-align: center;
+}
+
+.menu li {
+  margin: 20px 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #b2b5a4;
+  font-size: 28px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: white;
 }
 
 /* ===== ГЛАВНЫЙ БЛОК ===== */
@@ -119,8 +147,5 @@ body {
   }
   .logo {
     height: 50px;
-  }
-  .menu {
-    right: 20px;
   }
 }
