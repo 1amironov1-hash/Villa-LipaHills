@@ -1,0 +1,39 @@
+name: Update CSS Version
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'style.css'
+
+jobs:
+  update-version:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Update CSS version
+        run: |
+          # Генерируем случайное число
+          VERSION=$(date +%s)
+          
+          # Обновляем версию в index.html
+          sed -i "s/style\.css?v=[0-9]*/style.css?v=$VERSION/g" index.html
+          
+      - name: Commit changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add index.html
+          git diff --quiet && git diff --staged --quiet || git commit -m "Auto-update CSS version"
+          
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
