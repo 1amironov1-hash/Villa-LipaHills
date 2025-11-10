@@ -11,7 +11,7 @@ body {
 }
 /* ===== ВЕРХНЯЯ ПАНЕЛЬ ===== */
 .top-bar {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   display: grid;
@@ -117,7 +117,7 @@ body {
   position: relative;
   z-index: 2;
   opacity: 0;
-  animation: fadeIn 1.5s ease-out 0.2s forwards;
+  animation: fadeIn 1.5s ease-out 0.8s forwards;
 }
 .hero-content h3 {
   color: #c5a15e;
@@ -163,4 +163,80 @@ body {
   .menu a {
     font-size: 22px;
   }
+  
+  /* Адаптив для Welcome секции */
+  .welcome-container {
+    flex-direction: column;
+    padding: 60px 20px;
+  }
+  
+  .welcome-text {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+  
+  .welcome-text h2 {
+    font-size: 32px;
+  }
+  
+  .welcome-image img {
+    margin-left: 0;
+  }
+}
+
+/* ===== СЕКЦИЯ WELCOME ===== */
+.welcome {
+  background: #f5f3ef;
+  padding: 100px 0;
+}
+
+.welcome-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.welcome-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.welcome-number {
+  color: #8b7355;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.welcome-text h2 {
+  color: #2c2c2c;
+  font-size: 42px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.welcome-description {
+  color: #6b6b6b;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.welcome-image {
+  flex: 1;
+  max-width: 600px;
+}
+
+.welcome-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  margin-left: 40px;
 }

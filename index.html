@@ -3,26 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- МЕТА-ТЕГИ ДЛЯ ОТКЛЮЧЕНИЯ КЭША -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
+  
   <title>Villa LipaHills</title>
-  <link rel="stylesheet" href="style.css?v=2" />
+  
+  <!-- ДОБАВЛЕНА ВЕРСИЯ К CSS -->
+  <link rel="stylesheet" href="style.css?v=1" />
 </head>
 <body>
-
   <!-- ВЕРХНЯЯ ПАНЕЛЬ -->
   <header class="top-bar">
     <div class="left">
       <span>EN</span>
-      <span>SR</span>
+      <span>BO</span>
       <span>+387 (0) 57 32 14 55</span>
     </div>
-
     <div class="center">
       <img src="logo.png" alt="Logo" class="logo" />
     </div>
-
     <div class="right">
       <!-- Три полоски -->
       <div class="menu-icon" id="menuBtn" onclick="toggleMenu()">
@@ -30,14 +32,13 @@
         <div></div>
         <div></div>
       </div>
-
       <!-- Крестик -->
       <div class="close-icon" id="closeBtn" onclick="toggleMenu()">
         &times;
       </div>
     </div>
   </header>
-
+  
   <!-- МЕНЮ -->
   <nav class="menu" id="menu">
     <ul>
@@ -49,7 +50,7 @@
       <li><a href="#">VILLAGE MARKET</a></li>
     </ul>
   </nav>
-
+  
   <!-- ГЛАВНЫЙ БЛОК -->
   <section class="hero">
     <div class="overlay"></div>
@@ -58,17 +59,54 @@
       <h1>IN HARMONY<br>WITH NATURE</h1>
     </div>
   </section>
-
+  
+  <!-- СЕКЦИЯ WELCOME -->
+  <section class="welcome">
+    <div class="welcome-container">
+      <div class="welcome-text">
+        <p class="welcome-number">01 - WELCOME</p>
+        <h2>WHERE HARMONY MEET<br>NATURE</h2>
+        <p class="welcome-description">
+          The Toplik Village Resort complex is located in the heart of nature near Sarajevo, at the Jovančić family farm. The resort is thoughtfully designed to offer a peaceful escape from the busy city life, providing you with the perfect vacation experience to indulge in tranquility and leisurely pleasures. Although surrounded by nature and isolated from the city, the Resort is only a 10-minute drive from the center of Sarajevo and important city sights, 20 km from Jahorina Mountain, and 6 km from Sarajevo International Airport.
+        </p>
+        <p class="welcome-description">
+          Toplik Village Resort is an exquisite ensemble of seven luxurious holiday villas, two of which, Villa Vranac and Villa Jovančić, contain family apartments and wellness facilities. Also, within the Resort, there is a restaurant with a long tradition, surrounded by ponds, with which the whole idea of Toplik originally started. Additionally, guests can explore the village market, and wine and cigar lounge situated alongside the restaurant. The Toplik estate also has a children's playground for the youngest visitors, as well as walking paths for all to enjoy. Reserve your villa and treat yourself to the vacation you deserve! Welcome!
+        </p>
+      </div>
+      <div class="welcome-image">
+        <img src="дом.jpg" alt="Toplik Village Resort">
+      </div>
+    </div>
+  </section>
+  
   <script>
     function toggleMenu() {
       const menu = document.getElementById("menu");
       const menuBtn = document.getElementById("menuBtn");
       const closeBtn = document.getElementById("closeBtn");
-
       menu.classList.toggle("active");
       menuBtn.classList.toggle("hidden");
       closeBtn.classList.toggle("visible");
     }
+
+    // Скрывать/показывать верхнюю панель при прокрутке
+    window.addEventListener('scroll', function() {
+      const topBar = document.querySelector('.top-bar');
+      const hero = document.querySelector('.hero');
+      
+      if (!topBar || !hero) return;
+      
+      const heroHeight = hero.offsetHeight;
+      
+      // Панель исчезает только когда прокрутили ВСЮ первую секцию
+      if (window.scrollY >= heroHeight) {
+        topBar.style.opacity = '0';
+        topBar.style.pointerEvents = 'none';
+      } else {
+        topBar.style.opacity = '1';
+        topBar.style.pointerEvents = 'auto';
+      }
+    });
   </script>
 </body>
 </html>
