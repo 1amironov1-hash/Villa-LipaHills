@@ -64,7 +64,6 @@
   <section class="welcome">
     <div class="welcome-container">
       <div class="welcome-text">
-        <p class="welcome-number">01 - WELCOME</p>
         <h2>WHERE HARMONY MEET<br>NATURE</h2>
         <p class="welcome-description">
           The Toplik Village Resort complex is located in the heart of nature near Sarajevo, at the Jovančić family farm. The resort is thoughtfully designed to offer a peaceful escape from the busy city life, providing you with the perfect vacation experience to indulge in tranquility and leisurely pleasures. Although surrounded by nature and isolated from the city, the Resort is only a 10-minute drive from the center of Sarajevo and important city sights, 20 km from Jahorina Mountain, and 6 km from Sarajevo International Airport.
@@ -89,24 +88,26 @@
       closeBtn.classList.toggle("visible");
     }
 
-    // Скрывать/показывать верхнюю панель при прокрутке
-    window.addEventListener('scroll', function() {
-      const topBar = document.querySelector('.top-bar');
-      const hero = document.querySelector('.hero');
+    // Анимация картинки при прокрутке
+    function checkImageAnimation() {
+      const welcomeImage = document.querySelector('.welcome-image');
       
-      if (!topBar || !hero) return;
+      if (!welcomeImage) return;
       
-      const heroHeight = hero.offsetHeight;
+      const imageTop = welcomeImage.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
       
-      // Панель исчезает только когда прокрутили ВСЮ первую секцию
-      if (window.scrollY >= heroHeight) {
-        topBar.style.opacity = '0';
-        topBar.style.pointerEvents = 'none';
-      } else {
-        topBar.style.opacity = '1';
-        topBar.style.pointerEvents = 'auto';
+      // Когда хоть немного картинки появилось на экране
+      if (imageTop < windowHeight - 50) {
+        welcomeImage.classList.add('animate');
       }
-    });
+    }
+    
+    // Проверяем при прокрутке
+    window.addEventListener('scroll', checkImageAnimation);
+    // Проверяем при загрузке (если уже на нужном месте)
+    window.addEventListener('load', checkImageAnimation);
+  </script>
   </script>
 </body>
 </html>

@@ -8,6 +8,13 @@ body {
   font-family: 'Georgia', serif;
   color: white;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  margin: 0;
+  padding: 0;
 }
 /* ===== ВЕРХНЯЯ ПАНЕЛЬ ===== */
 .top-bar {
@@ -117,7 +124,7 @@ body {
   position: relative;
   z-index: 2;
   opacity: 0;
-  animation: fadeIn 1.5s ease-out 0.8s forwards;
+  animation: fadeIn 1.5s ease-out 0.2s forwards;
 }
 .hero-content h3 {
   color: #c5a15e;
@@ -231,6 +238,14 @@ body {
 .welcome-image {
   flex: 1;
   max-width: 600px;
+  opacity: 0;
+  transform: translateX(-130px);
+  transition: all 2s ease-out;
+}
+
+.welcome-image.animate {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .welcome-image img {
