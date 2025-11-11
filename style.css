@@ -124,7 +124,7 @@ html {
   position: relative;
   z-index: 2;
   opacity: 0;
-  animation: fadeIn 1.5s ease-out 0.2s forwards;
+  animation: fadeIn 1.5s ease-out 0.8s forwards;
 }
 .hero-content h3 {
   color: #c5a15e;
@@ -159,8 +159,12 @@ html {
     padding: 15px 20px;
   }
   
+  .hero-content h3 {
+    font-size: 12px;
+  }
+  
   .hero-content h1 {
-    font-size: 40px;
+    font-size: 32px;
   }
   
   .logo {
@@ -168,22 +172,40 @@ html {
   }
   
   .menu a {
-    font-size: 22px;
+    font-size: 20px;
   }
   
   /* Адаптив для Welcome секции */
+  .welcome {
+    padding: 60px 0;
+  }
+  
   .welcome-container {
     flex-direction: column;
-    padding: 60px 20px;
+    padding: 0 20px;
+    gap: 30px;
   }
   
   .welcome-text {
     max-width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .welcome-text h2 {
-    font-size: 32px;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .welcome-description {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .welcome-image {
+    max-width: 100%;
+    transform: translateX(0) !important;
+    opacity: 1 !important;
   }
   
   .welcome-image img {
@@ -239,7 +261,7 @@ html {
   flex: 1;
   max-width: 600px;
   opacity: 0;
-  transform: translateX(-130px);
+  transform: translateX(-520px);
   transition: all 2s ease-out;
 }
 
