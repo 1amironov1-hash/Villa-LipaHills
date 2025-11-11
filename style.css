@@ -16,6 +16,7 @@ html {
   margin: 0;
   padding: 0;
 }
+
 /* ===== ВЕРХНЯЯ ПАНЕЛЬ ===== */
 .top-bar {
   position: absolute;
@@ -29,17 +30,21 @@ html {
   z-index: 1000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
+
 .left span {
   margin-right: 15px;
   font-size: 14px;
 }
+
 .center {
   display: flex;
   justify-content: center;
 }
+
 .logo {
   height: 70px;
 }
+
 /* ===== ИКОНКА МЕНЮ ===== */
 .menu-icon {
   width: 35px;
@@ -47,6 +52,7 @@ html {
   justify-self: end;
   z-index: 1001;
 }
+
 .menu-icon div {
   width: 100%;
   height: 4px;
@@ -54,9 +60,11 @@ html {
   margin: 6px 0;
   transition: 0.3s;
 }
+
 .menu-icon.hidden {
   display: none;
 }
+
 /* ===== КРЕСТИК ===== */
 .close-icon {
   display: none;
@@ -67,9 +75,11 @@ html {
   z-index: 1001;
   transition: 0.3s;
 }
+
 .close-icon.visible {
   display: block;
 }
+
 /* ===== МЕНЮ ===== */
 .menu {
   position: fixed;
@@ -86,16 +96,20 @@ html {
   transform: translateY(-100%);
   transition: transform 0.5s ease-in-out;
 }
+
 .menu.active {
   transform: translateY(0);
 }
+
 .menu ul {
   list-style: none;
   text-align: center;
 }
+
 .menu li {
   margin: 20px 0;
 }
+
 .menu a {
   text-decoration: none;
   color: #b2b5a4;
@@ -103,9 +117,11 @@ html {
   font-weight: bold;
   transition: color 0.3s ease;
 }
+
 .menu a:hover {
   color: white;
 }
+
 /* ===== ГЛАВНЫЙ БЛОК ===== */
 .hero {
   height: 100vh;
@@ -115,23 +131,27 @@ html {
   align-items: center;
   padding-left: 8%;
 }
+
 .overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.3);
 }
+
 .hero-content {
   position: relative;
   z-index: 2;
   opacity: 0;
   animation: fadeIn 1.5s ease-out 0.8s forwards;
 }
+
 .hero-content h3 {
   color: #c5a15e;
   letter-spacing: 2px;
   font-weight: 400;
   margin-bottom: 10px;
 }
+
 .hero-content h1 {
   font-size: 70px;
   font-weight: bold;
@@ -146,6 +166,71 @@ html {
   to {
     opacity: 1;
   }
+}
+
+/* ===== СЕКЦИЯ WELCOME ===== */
+.welcome {
+  background: #f5f3ef;
+  padding: 100px 0;
+}
+
+.welcome-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.welcome-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.welcome-number {
+  color: #8b7355;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.welcome-text h2 {
+  color: #2c2c2c;
+  font-size: 42px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.welcome-description {
+  color: #6b6b6b;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.welcome-image {
+  flex: 1;
+  max-width: 600px;
+  opacity: 0;
+  transform: translateX(-520px);
+  transition: all 2s ease-out;
+}
+
+.welcome-image.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.welcome-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  margin-left: 40px;
 }
 
 /* ===== АДАПТИВ ===== */
@@ -213,75 +298,12 @@ html {
     max-width: 100%;
     transform: translateX(0) !important;
     opacity: 1 !important;
+    margin: 0 auto;
   }
   
   .welcome-image img {
     margin-left: 0;
     border-radius: 10px;
+    width: 100%;
   }
-}
-
-/* ===== СЕКЦИЯ WELCOME ===== */
-.welcome {
-  background: #f5f3ef;
-  padding: 100px 0;
-}
-
-.welcome-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 60px;
-  display: flex;
-  align-items: center;
-  gap: 80px;
-}
-
-.welcome-text {
-  flex: 1;
-  max-width: 600px;
-}
-
-.welcome-number {
-  color: #8b7355;
-  font-size: 14px;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-  font-weight: 500;
-}
-
-.welcome-text h2 {
-  color: #2c2c2c;
-  font-size: 42px;
-  font-weight: bold;
-  line-height: 1.2;
-  margin-bottom: 30px;
-}
-
-.welcome-description {
-  color: #6b6b6b;
-  font-size: 14px;
-  line-height: 1.7;
-  margin-bottom: 20px;
-  text-align: justify;
-}
-
-.welcome-image {
-  flex: 1;
-  max-width: 600px;
-  opacity: 0;
-  transform: translateX(-520px);
-  transition: all 2s ease-out;
-}
-
-.welcome-image.animate {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.welcome-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-  margin-left: 40px;
 }
