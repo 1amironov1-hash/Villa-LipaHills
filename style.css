@@ -160,55 +160,53 @@ html {
   }
   
   .hero-content h3 {
-    font-size: 10px;
-    letter-spacing: 1px;
+    font-size: 12px;
   }
   
   .hero-content h1 {
-    font-size: 24px;
-    line-height: 1.2;
+    font-size: 32px;
   }
   
   .logo {
-    height: 45px;
+    height: 50px;
   }
   
   .menu a {
-    font-size: 18px;
+    font-size: 22px;
   }
   
   /* Адаптив для Welcome секции */
   .welcome {
-    padding: 30px 0;
+    padding: 25px 0;
   }
   
   .welcome-container {
     flex-direction: column;
-    padding: 0 20px;
-    gap: 20px;
+    padding: 0 18px;
+    gap: 15px;
   }
   
   .welcome-text {
     max-width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
   
   .welcome-number {
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    margin-bottom: 12px;
+    font-size: 9px;
+    letter-spacing: 1.2px;
+    margin-bottom: 10px;
   }
   
   .welcome-text h2 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    line-height: 1.2;
+    font-size: 20px;
+    margin-bottom: 12px;
+    line-height: 1.15;
   }
   
   .welcome-description {
-    font-size: 12px;
-    line-height: 1.6;
-    margin-bottom: 12px;
+    font-size: 11px;
+    line-height: 1.5;
+    margin-bottom: 10px;
   }
   
   .welcome-image {
@@ -219,7 +217,7 @@ html {
   
   .welcome-image img {
     margin-left: 0;
-    border-radius: 12px;
+    border-radius: 10px;
   }
 }
 
