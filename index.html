@@ -84,9 +84,35 @@
       const menu = document.getElementById("menu");
       const menuBtn = document.getElementById("menuBtn");
       const closeBtn = document.getElementById("closeBtn");
+      const body = document.body;
+      const topBar = document.querySelector('.top-bar');
+      
       menu.classList.toggle("active");
       menuBtn.classList.toggle("hidden");
       closeBtn.classList.toggle("visible");
+      
+      // Блокируем/разблокируем прокрутку
+      if (menu.classList.contains("active")) {
+        body.style.overflow = "hidden";
+        topBar.style.position = "fixed";
+      } else {
+        body.style.overflow = "auto";
+        topBar.style.position = "absolute";
+      }
+    }
+    
+    // Функция для перехода к секции с задержкой
+    function navigateToSection(sectionId) {
+      // Сначала закрываем меню
+      toggleMenu();
+      
+      // Ждём пока меню закроется (0.5s анимация), потом прокручиваем
+      setTimeout(() => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 500); // 500ms = время анимации меню
     }
 
     // Анимация картинки при прокрутке
