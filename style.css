@@ -31,6 +31,12 @@ html {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+/* Когда меню открыто - панель фиксируется */
+.menu.active ~ header.top-bar,
+body:has(.menu.active) .top-bar {
+  position: fixed;
+}
+
 .left span {
   margin-right: 15px;
   font-size: 14px;
