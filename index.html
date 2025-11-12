@@ -12,23 +12,7 @@
   <title>Villa LipaHills</title>
   
   <!-- ДОБАВЛЕНА ВЕРСИЯ К CSS -->
-  <link rel="stylesheet" href="style.css?v=999" />
-<style>
-  @media (max-width: 768px) {
-    .welcome-description {
-      font-size: 11px !important;
-      line-height: 1.5 !important;
-    }
-    .welcome-text h2 {
-      font-size: 20px !important;
-    }
-    .welcome {
-      min-height: 100vh !important;
-      display: flex !important;
-      align-items: center !important;
-    }
-  }
-</style>
+  <link rel="stylesheet" href="style.css?v=1" />
 </head>
 <body>
   <!-- ВЕРХНЯЯ ПАНЕЛЬ -->
@@ -58,9 +42,9 @@
   <!-- МЕНЮ -->
   <nav class="menu" id="menu">
     <ul>
-      <li><a href="#">HOME</a></li>
+      <li><a href="#home" onclick="toggleMenu()">HOME</a></li>
+      <li><a href="#welcome" onclick="toggleMenu()">ABOUT US</a></li>
       <li><a href="#">RESTAURANT</a></li>
-      <li><a href="#">ABOUT US</a></li>
       <li><a href="#">VILLA VRANAC</a></li>
       <li><a href="#">LUXURY VILLAS FOR RESTING</a></li>
       <li><a href="#">VILLAGE MARKET</a></li>
@@ -68,7 +52,7 @@
   </nav>
   
   <!-- ГЛАВНЫЙ БЛОК -->
-  <section class="hero">
+  <section class="hero" id="home">
     <div class="overlay"></div>
     <div class="hero-content">
       <h3>VILLA LIPAHILLS</h3>
@@ -77,9 +61,10 @@
   </section>
   
   <!-- СЕКЦИЯ WELCOME -->
-  <section class="welcome">
+  <section class="welcome" id="welcome">
     <div class="welcome-container">
       <div class="welcome-text">
+        <p class="welcome-number">01 - WELCOME</p>
         <h2>WHERE HARMONY MEET<br>NATURE</h2>
         <p class="welcome-description">
           The Toplik Village Resort complex is located in the heart of nature near Sarajevo, at the Jovančić family farm. The resort is thoughtfully designed to offer a peaceful escape from the busy city life, providing you with the perfect vacation experience to indulge in tranquility and leisurely pleasures. Although surrounded by nature and isolated from the city, the Resort is only a 10-minute drive from the center of Sarajevo and important city sights, 20 km from Jahorina Mountain, and 6 km from Sarajevo International Airport.
