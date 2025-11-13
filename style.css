@@ -15,7 +15,7 @@ body {
 html {
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; - убрали, теперь используем JS */
 }
 
 /* ===== ВЕРХНЯЯ ПАНЕЛЬ ===== */

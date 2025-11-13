@@ -12,7 +12,23 @@
   <title>Villa LipaHills</title>
   
   <!-- ДОБАВЛЕНА ВЕРСИЯ К CSS -->
-  <link rel="stylesheet" href="style.css?v=1" />
+  <link rel="stylesheet" href="style.css?v=999" />
+  <style>
+    @media (max-width: 768px) {
+      .welcome-description {
+        font-size: 11px !important;
+        line-height: 1.5 !important;
+      }
+      .welcome-text h2 {
+        font-size: 20px !important;
+      }
+      .welcome {
+        min-height: 100vh !important;
+        display: flex !important;
+        align-items: center !important;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- ВЕРХНЯЯ ПАНЕЛЬ -->
@@ -42,8 +58,8 @@
   <!-- МЕНЮ -->
   <nav class="menu" id="menu">
     <ul>
-      <li><a href="#home" onclick="toggleMenu()">HOME</a></li>
-      <li><a href="#welcome" onclick="toggleMenu()">ABOUT US</a></li>
+      <li><a href="#home" onclick="event.preventDefault(); navigateToSection('home')">HOME</a></li>
+      <li><a href="#welcome" onclick="event.preventDefault(); navigateToSection('welcome')">ABOUT US</a></li>
       <li><a href="#">RESTAURANT</a></li>
       <li><a href="#">VILLA VRANAC</a></li>
       <li><a href="#">LUXURY VILLAS FOR RESTING</a></li>
@@ -106,13 +122,48 @@
       // Сначала закрываем меню
       toggleMenu();
       
-      // Ждём пока меню закроется (0.5s анимация), потом прокручиваем
+      // ШАГ 1: Ждём пока меню закроется и моментально прокручиваем наверх
       setTimeout(() => {
-        const section = document.getElementById(sectionId);
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 1000); // 1000ms = время анимации меню
+        window.scrollTo(0, 0); // Мгновенно на верх страницы
+        
+        // ШАГ 2: Ждём время, потом начинаем плавную прокрутку к нужной секции
+        setTimeout(() => {
+          const section = document.getElementById(sectionId);
+          if (section) {
+            // Медленная плавная прокрутка
+            const targetPosition = section.offsetTop;
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            
+            // ============================================
+            // ВОТ ЭТА СТРОКА! МЕНЯЙ СКОРОСТЬ ПРОКРУТКИ ЗДЕСЬ:
+            const duration = 1500; // 2000 = 2 секунды
+            // Примеры: 1000 = быстро, 3000 = медленно, 4000 = очень медленно
+            // ============================================
+            
+            let start = null;
+            
+            function animation(currentTime) {
+              if (start === null) start = currentTime;
+              const timeElapsed = currentTime - start;
+              const run = ease(timeElapsed, startPosition, distance, duration);
+              window.scrollTo(0, run);
+              if (timeElapsed < duration) requestAnimationFrame(animation);
+            }
+            
+            // Функция плавности (easeInOutQuad)
+            function ease(t, b, c, d) {
+              t /= d / 2;
+              if (t < 1) return c / 2 * t * t + b;
+              t--;
+              return -c / 2 * (t * (t - 2) - 1) + b;
+            }
+            
+            requestAnimationFrame(animation);
+          }
+        }, 10); // ← ЗДЕСЬ МЕНЯЙ ВРЕМЯ ОЖИДАНИЯ перед прокруткой (10 = 0.01 сек)
+        
+      }, 400); // ← ЗДЕСЬ время закрытия меню (400 = 0.4 секунды)
     }
 
     // Анимация картинки при прокрутке
@@ -134,7 +185,6 @@
     window.addEventListener('scroll', checkImageAnimation);
     // Проверяем при загрузке (если уже на нужном месте)
     window.addEventListener('load', checkImageAnimation);
-  </script>
   </script>
 </body>
 </html>
